@@ -1,0 +1,8 @@
+The demos in this directory show the 32bit x86 assembly language
+compile rule as following for output 32bit program in the host with x86_64 :
+    ~$ nasm -f elf helloworld.asm
+    ~$ ld -m elf_i386 helloworld-len.o -o helloworld
+
+In the x86_64,default out as
+    ~$ nasm -f elf64 helloworld.asm
+    ~$ ld helloworld.o -o helloworld

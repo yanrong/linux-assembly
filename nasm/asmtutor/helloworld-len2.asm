@@ -4,13 +4,12 @@
 ; Run with: ./helloworld-len
 
 SECTION .data
-msg     db      'Hello, brave new world!', 0Ah
+    msg     db      'Hello, brave new world!', 0Ah
 
 SECTION .text
-global  _start
+    global  _start
 
 _start:
-
     mov     eax, msg        ; move the address of our message string into EAX
     call    strlen          ; call our function to calculate the length of the string
 

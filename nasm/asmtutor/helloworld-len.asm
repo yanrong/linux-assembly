@@ -9,7 +9,6 @@ SECTION .text
     global  _start
 
 _start:
-
     mov     ebx, msg        ; move the address of our message string into EBX
     mov     eax, ebx        ; move the address in EBX into EAX as well (Both now point to the same segment in memory)
 

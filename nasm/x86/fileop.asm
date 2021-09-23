@@ -11,7 +11,7 @@ section .text
 
 _start:
 
-    mov     ecx, 0777o          ; Create file
+    mov     ecx, 0777o          ; Create file, flag is oct
     mov     ebx, filename
     mov     eax, 8
     int     80h

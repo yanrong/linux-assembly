@@ -11,7 +11,7 @@ l1:
     mov [num], eax
     mov eax, 4
     mov ebx, 1
-    push ecx
+    push ecx ; for loop instruction, ecx default as loop count
 
     mov ecx, num
     mov edx, 1
@@ -21,7 +21,7 @@ l1:
     sub eax, '0'
     inc eax
     add eax, '0'
-    pop ecx
+    pop ecx ; if the count is zero, the loop will be terminate
     loop l1 ;a loop instruction
 
     mov eax,1             ;system call number (sys_exit)

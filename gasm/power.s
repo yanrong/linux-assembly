@@ -13,7 +13,7 @@ main:
         push    %r13
         push    %r14
         # By pushing 3 registers our stack is already aligned for calls
-
+        # the main in C, first argument, is argc
         cmp     $3, %rdi                # must have exactly two arguments
         jne     error1
 
@@ -21,8 +21,9 @@ main:
 
 # We will use ecx to count down form the exponent to zero, esi to hold the
 # value of the base, and eax to hold the running product.
-
-        mov     16(%r12), %rdi          # argv[2]
+        # AT&T style assemb -/+16(%rax) is represent the offset base the rax
+        # (%rax, %rbx, 8) rax+rbx*8
+        mov     16(%r12), %rdi          # argv[2] r12 + 16
         call    atoi                    # y in eax
         cmp     $0, %eax                # disallow negative exponents
         jl      error2
